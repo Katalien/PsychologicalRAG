@@ -1,0 +1,196 @@
+{
+    "rows": [
+        {
+            "id": 1,
+            "name": "Как справиться с депрессией самостоятельно",
+            "link": "https://medscannet.ru/blogmed/kak-vyjti-iz-depressii/",
+            "date": "08-09-2025",
+            "category": "depression",
+            "text": ""
+        },
+        {
+            "id": 2,
+            "name": "Можно ли выйти из депрессии самостоятельно - научный подход к самопомощи",
+            "link": "https://medgorod-clinic.ru/stati/mozhno-li-vyyti-iz-depressii-samostoyatelno--razberem-nauchnyy-podkhod-k-samopomoshchi/",
+            "date": "None",
+            "category": "depression",
+            "text": ""
+        },
+        {
+            "id": 3,
+            "name": "15 простых способов избавиться от депрессии",
+            "link": "https://npistanbul.com/ru/15-prostyx-sposobov-izbavitsia-ot-depressii",
+            "date": "27-01-2025",
+            "category": "depression",
+            "text": ""
+        },
+        {
+            "id": 4,
+            "name": "Самостоятельное лечение депрессии",
+            "link": "https://psychologyjournal.ru/stories/depressiya/samostoyatelnoe-lechenie-depressii/",
+            "date": "01-01-2025",
+            "category": "depression",
+            "text": ""
+        },
+        {
+            "id": 5,
+            "name": "Как помочь близкому человеку в состоянии близком к депрессивному",
+            "link": "https://omr.by/news/stati/kak-pomoch-blizkomu-cheloveku-nakhodyashchemusya-v-sostoyanii-kotoroe-blizko-k-depressivnomu",
+            "date": "26-11-2025",
+            "category": "depression",
+            "text": ""
+        },
+        {
+            "id": 6,
+            "name": "Что делать если близкому человеку плохо",
+            "link": "https://blog.alter.ru/likbez/chto-delat-esli-blizkomu-cheloveku-ploho/",
+            "date": "14-12-2022",
+            "category": "depression",
+            "text": ""
+        },
+        {
+            "id": 7,
+            "name": "Как психолог помогает бороться с тревогой",
+            "link": "https://blog.alter.ru/likbez/kak-psiholog-pomogaet-borotsa-s-trevogoy/",
+            "date": "30-10-2024",
+            "category": "anxiety",
+            "text": ""
+        },
+        {
+            "id": 8,
+            "name": "5 эффективных способов справиться с тревогой",
+            "link": "https://vesnaclinic.com/blogs/5-effektivnyh-sposobov-spravitsya-s-trevogoj/",
+            "date": "12-03-2022",
+            "category": "anxiety",
+            "text": ""
+        },
+        {
+            "id": 9,
+            "name": "Как справиться с тревожностью",
+            "link": "https://psychodemia.ru/blog/how-to-deal-with-anxiety",
+            "date": "16-03-2022",
+            "category": "anxiety",
+            "text": ""
+        },
+        {
+            "id": 10,
+            "name": "Способы справиться с тревогой",
+            "link": "https://dszn.ru/press-center/smi/814",
+            "date": "25-03-2020",
+            "category": "anxiety",
+            "text": ""
+        },
+        {
+            "id": 11,
+            "name": "Как избавиться от панических атак при помощи КПТ упражнений",
+            "link": "https://niidpo.ru/blog/kak-izbavitsya-ot-panicheskih-atak-pri-pomoshi-kpt-uprazhnenij",
+            "date": "02-02-2024",
+            "category": "panic_attack",
+            "text": ""
+        },
+        {
+            "id": 12,
+            "name": "10 советов как справиться с панической атакой",
+            "link": "https://neuroflex.ua/ru/blog/10-porad-yak-vporatysya-z-panichnoyu-atakoyu/",
+            "date": "30-11-2023",
+            "category": "panic_attack",
+            "text": ""
+        },
+        {
+            "id": 13,
+            "name": "Дыхательная гимнастика при панических атаках",
+            "link": "https://www.israclinic.com/nashi-publikatsii/psikhiatriya/dykhatelnaya-gimnastika-pri-panicheskikh-atakakh/",
+            "date": "None",
+            "category": "panic_attack",
+            "text": ""
+        },
+        {
+            "id": 14,
+            "name": "Как быстро успокоить паническую атаку у другого человека",
+            "link": "https://isaevclinic.ru/kak-bystro-uspokoit-panicheskuyu-ataku/",
+            "date": "31-05-2025",
+            "category": "panic_attack",
+            "text": ""
+        },
+        {
+            "id": 15,
+            "name": "Как преодолеть эмоции и стресс",
+            "link": "https://t-j.ru/list/how-to-overcome-emotions/",
+            "date": "05-07-2024",
+            "category": "stress",
+            "text": ""
+        },
+        {
+            "id": 16,
+            "name": "9 техник которые помогут быстро снять стресс",
+            "link": "https://pedsovet.org/article/9-tehnik-kotorye-pomogut-bystro-snat-stress",
+            "date": "31-05-2022",
+            "category": "stress",
+            "text": ""
+        },
+        {
+            "id": 17,
+            "name": "Как снять стресс - практические советы",
+            "link": "https://academpharm.by/kak-snyat-stress",
+            "date": "17-11-2023",
+            "category": "stress",
+            "text": ""
+        },
+        {
+            "id": 18,
+            "name": "Техники релаксации как снизить стресс и улучшить качество жизни",
+            "link": "https://mip.institute/journal/tekhniki-relaksacii-kak-snizit-stress-i-uluchshit-kachestvo-zhizni-",
+            "date": "24-04-2025",
+            "category": "stress",
+            "text": ""
+        },
+        {
+            "id": 19,
+            "name": "Как справиться с эмоциональным выгоранием - 5 советов психолога",
+            "link": "https://mitm.institute/journal--psihologiya--kak-spravitsya-s-emoczionalnym-vygoraniem-5-sovetov-psihologa",
+            "date": "21-07-2023",
+            "category": "burnout",
+            "text": ""
+        },
+        {
+            "id": 20,
+            "name": "Советы по преодолению выгорания",
+            "link": "https://www.b17.ru/article/710120/",
+            "date": "05-08-2025",
+            "category": "burnout",
+            "text": ""
+        },
+        {
+            "id": 21,
+            "name": "Синдром эмоционального выгорания: выявление, стадии и профилактика",
+            "link": "https://journal.ecostandard.ru/ot/opinion/sindrom-emotsionalnogo-vygoraniya-vyyavlenie-stadii-i-profilaktika/",
+            "date": "21-12-2024",
+            "category": "burnout",
+            "text": ""
+        },
+        {
+            "id": 22,
+            "name": "Оценка эффективности применения дыхательной гимнастики у пациентов с паническими атаками",
+            "link": "https://cyberleninka.ru/article/n/otsenka-effektivnosti-primeneniya-dyhatelnoy-gimnastiki-u-patsientov-s-panicheskimi-atakami",
+            "date": "25-10-2016",
+            "category": "paper",
+            "text": ""
+        },
+        {
+            "id": 23,
+            "name": "Применение современных технологий в коррекции тревожности у взрослых",
+            "link": "https://archive-coursework.mmu.ru/files/upload/Diplomas/2025/publish/p_9839_460.pdf",
+            "date": "25-10-2016",
+            "category": "paper",
+            "text": ""
+        },
+        {
+            "id": 24,
+            "name": "МЕДИТАЦИЯ КАК ЭФФЕКТИВНЫЙ ИНСТУМЕНТ СНИЖЕНИЯ СТРЕССА И ПОВЫШЕНИЯ СТРЕССОУСТОЙЧИВОСТИ",
+            "link": "https://tksu.ru/upload/iblock/bcc/esxfn2v17odcyhbfd04jdapz57fb3qjt/VKU_Seriya_1_2025_T8_2_27_.pdf#page=97",
+            "date": "01-01-2025",
+            "category": "paper",
+            "text": ""
+        }
+    ]
+}
