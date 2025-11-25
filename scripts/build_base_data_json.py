@@ -72,7 +72,7 @@ if __name__ == "__main__":
     # Пути к файлам
     BASE_JSON_PATH = "./data/base_data.json"
     ARTICLES_DIR = "./data/articles"
-    OUTPUT_PATH = "./final_dataset.json"
+    OUTPUT_PATH = "./data/final_dataset.json"
     
     # Проверяем покрытие статей
     print("=== ПРОВЕРКА СТАТЕЙ ===")
