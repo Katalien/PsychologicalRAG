@@ -1,0 +1,16 @@
+# python v.3.9
+
+langchain == 1.1.0
+langchain-community == 0.4.1
+transformers == 4.57.1
+# langchain-core == 1.1.0
+pandas == 2.3.3
+numpy == 2.3.4
+nltk == 3.9.2
+pymorphy3 == 2.0.6
+scikit-learn == 1.7.2
+pydantic == 2.12.4
+python-telegram-bot == 22.5
+python-dotenv == 1.2.1
+mistralai == 1.9.11
+langchain_mistralai == 0.2.12
