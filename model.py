@@ -10,6 +10,7 @@ from langchain_core.output_parsers import JsonOutputParser
 from langchain_mistralai import ChatMistralAI
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from pydantic import BaseModel, Field
+from langchain_huggingface import HuggingFaceEmbeddings
 
 load_dotenv()
 
@@ -23,6 +24,14 @@ class Psycho(BaseModel):
 
 
 parser = JsonOutputParser(pydantic_object=Psycho)
+model_name = "google/embeddinggemma-300m"
+model_kwargs = {"device": "cpu"}
+encode_kwargs = {"normalize_embeddings": False}
+embeddings = HuggingFaceEmbeddings(
+    model_name=model_name,
+    model_kwargs=model_kwargs,
+    encode_kwargs=encode_kwargs,
+)
 
 
 def prepare_data():
@@ -31,21 +40,15 @@ def prepare_data():
     documents = loader.load()
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1024, chunk_overlap=0)
     texts = text_splitter.split_documents(documents)
-    embeddings = langchain.embeddings.HuggingFaceEmbeddings(
-        model_name="distiluse-base-multilingual-cased-v1"
-    )
     sample_vec = embeddings.embed_query("Hello, world!")
     db = FAISS.from_documents(texts, embeddings)
     db.as_retriever()
     db.save_local('faiss')
 
 
-# prepare_data()
+prepare_data()
 
 def send_to_model(msg):
-    embeddings = langchain.embeddings.HuggingFaceEmbeddings(
-        model_name="distiluse-base-multilingual-cased-v1"
-    )
     db = FAISS.load_local("./faiss", embeddings, allow_dangerous_deserialization=True)  # открываем сохранённую бд
 
     prompt = PromptTemplate(

@@ -14,3 +14,4 @@ python-telegram-bot == 22.5
 python-dotenv == 1.2.1
 mistralai == 1.9.11
 langchain_mistralai == 0.2.12
+langchain-huggingface == 0.2.0
