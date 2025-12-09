@@ -4,7 +4,7 @@ from typing import List, Dict, Any
 
 import pandas as pd
 from dotenv import load_dotenv
-from langchain.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 from langchain_community.document_loaders import DataFrameLoader
 from langchain_community.vectorstores import FAISS
 from langchain_core.output_parsers import JsonOutputParser
