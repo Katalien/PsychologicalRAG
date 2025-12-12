@@ -1,11 +1,12 @@
-version: '3.9'
+version: '3.13'
 
 services:
-  latex-pdf-generator:
+  rag-bot:
     build: .
+    container_name: psych_rag_bot
+    restart: always
+    env_file: .env
     volumes:
-      - .:/converter
-    environment:
-      - DISPLAY=host.docker.internal:0
-    stdin_open: true
-    tty: true
+      - ./faiss_index:/app/faiss_index
+      - ./cache:/app/cache
+    command: python bot.py
