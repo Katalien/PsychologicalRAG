@@ -45,7 +45,7 @@ def main():
     while True:
         question = input("Вопрос: ").strip()
         
-        if question.lower() in {"stop"}:
+        if question.lower() in {"stop", "exit"}:
             break
         
 
@@ -56,7 +56,7 @@ def main():
         print(f"Заголовок: {answer.get('title', 'Нет заголовка')}")
         print(f"\nРешение:\n{answer.get('solution', 'Нет решения')}")
         link = answer.get('link', '').strip()
-        print(f"\ Ссылка: {link if link else '—'}")
+        print(f"Ссылка: {link if link else '—'}")
 
 
 if __name__ == "__main__":
