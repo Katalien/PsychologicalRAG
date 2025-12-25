@@ -429,7 +429,6 @@
       "expected_theme": "burnout",
       "allowed_topics": ["burnout"]
     },
-
     {
       "id": 71,
       "question": "Какие научные исследования подтверждают эффективность когнитивно-поведенческой терапии?",
@@ -489,6 +488,126 @@
       "question": "Почему важно опираться на научные источники при работе с психическим здоровьем?",
       "expected_theme": "paper",
       "allowed_topics": ["paper"]
+    },
+    {
+        "id": 81,
+        "question": "У меня уже неделю нет сил, но настроение вроде нормальное. Это депрессия или выгорание? Как отличить по признакам?",
+        "expected_theme": "burnout",
+        "allowed_topics": ["burnout", "depression", "stress"]
+    },
+    {
+        "id": 82,
+        "question": "Я постоянно тревожусь и одновременно плохо сплю. Это тревога или стресс? Что обычно первично и как с этим работать?",
+        "expected_theme": "anxiety",
+        "allowed_topics": ["anxiety", "stress"]
+    },
+    {
+        "id": 83,
+        "question": "Когда я выхожу из дома, у меня начинается сильное сердцебиение и страх, что упаду в обморок. Это паническая атака или просто тревога?",
+        "expected_theme": "panic_attack",
+        "allowed_topics": ["panic_attack", "anxiety"]
+    },
+    {
+        "id": 84,
+        "question": "Я читаю советы «просто не думай о плохом» — но от этого хуже. Почему так и что делать вместо этого?",
+        "expected_theme": "anxiety",
+        "allowed_topics": ["anxiety", "stress"]
+    },
+    {
+        "id": 85,
+        "question": "Мне кажется, что у меня «химический дисбаланс», поэтому ничего не поможет. Это правда? Что говорят исследования?",
+        "expected_theme": "paper",
+        "allowed_topics": ["paper"]
+    },
+    {
+        "id": 86,
+        "question": "Правда ли, что дыхательные упражнения всегда останавливают паническую атаку за пару минут? Если нет — почему?",
+        "expected_theme": "panic_attack",
+        "allowed_topics": ["panic_attack", "anxiety", "paper"]
+    },
+    {
+        "id": 87,
+        "question": "Я хочу полностью убрать стресс из жизни. Это реалистичная цель или она может навредить? Почему?",
+        "expected_theme": "stress",
+        "allowed_topics": ["stress"]
+    },
+    {
+        "id": 88,
+        "question": "Мне советуют «срочно сменить работу» из-за выгорания. Это действительно всегда нужно? Какие есть альтернативы?",
+        "expected_theme": "burnout",
+        "allowed_topics": ["burnout", "stress"]
+    },
+    {
+        "id": 89,
+        "question": "Я думаю, что если буду избегать мест, где мне страшно, то тревога пройдёт. Это рабочая стратегия или ловушка?",
+        "expected_theme": "anxiety",
+        "allowed_topics": ["anxiety", "panic_attack"]
+    },
+    {
+        "id": 90,
+        "question": "Иногда мне резко становится страшно, я начинаю прислушиваться к сердцу и «проверять симптомы». Почему это усиливает состояние?",
+        "expected_theme": "panic_attack",
+        "allowed_topics": ["panic_attack", "anxiety"]
+    },
+    {
+        "id": 91,
+        "question": "Если я выгорела, но при этом могу смеяться и радоваться, значит это точно не выгорание? Разбей эту мысль.",
+        "expected_theme": "burnout",
+        "allowed_topics": ["burnout", "stress"]
+    },
+    {
+        "id": 92,
+        "question": "Мне кажется, что я просто ленивый человек, а не в депрессии. Какие признаки помогают различить лень и депрессию?",
+        "expected_theme": "depression",
+        "allowed_topics": ["depression", "burnout"]
+    },
+    {
+        "id": 93,
+        "question": "Я слышал(а), что антидепрессанты «меняют личность». Что говорят исследования о побочных эффектах и рисках?",
+        "expected_theme": "paper",
+        "allowed_topics": ["paper"]
+    },
+    {
+        "id": 94,
+        "question": "Может ли длительный стресс привести к паническим атакам? Есть ли у этого объяснение в исследованиях?",
+        "expected_theme": "paper",
+        "allowed_topics": ["paper"]
+    },
+    {
+        "id": 95,
+        "question": "Я хочу сам(а) себе поставить диагноз: тревожное расстройство или депрессия. Можешь по моему описанию точно сказать?",
+        "expected_theme": "anxiety",
+        "allowed_topics": ["anxiety", "depression", "stress", "burnout"]
+    },
+    {
+        "id": 96,
+        "question": "Я хочу, чтобы ты дал(а) мне пошаговый план на 30 дней, чтобы «вылечить депрессию» без врача. Это возможно?",
+        "expected_theme": "depression",
+        "allowed_topics": ["depression"]
+    },
+    {
+        "id": 97,
+        "question": "Я всё делаю идеально, но всё равно тревожно. Перфекционизм — причина тревоги или следствие? Как это объясняют модели?",
+        "expected_theme": "anxiety",
+        "allowed_topics": ["anxiety", "paper"]
+    },
+    {
+        "id": 98,
+        "question": "Если у меня выгорание, почему отдых на выходных не помогает, а иногда становится только хуже?",
+        "expected_theme": "burnout",
+        "allowed_topics": ["burnout", "stress", "depression"]
+    },
+    {
+        "id": 99,
+        "question": "Я боюсь, что у меня паническая атака на публике и все увидят. Как работает этот «страх страха»?",
+        "expected_theme": "panic_attack",
+        "allowed_topics": ["panic_attack", "anxiety"]
+    },
+    {
+        "id": 100,
+        "question": "Сравни кратко: какие подходы считаются наиболее доказательными для тревоги и депрессии, и в чём различия по данным исследований?",
+        "expected_theme": "paper",
+        "allowed_topics": ["paper"]
     }
   ]
 }
