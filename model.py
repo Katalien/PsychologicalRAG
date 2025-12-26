@@ -8,10 +8,10 @@ from langchain_community.vectorstores import FAISS
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import RunnableMap, RunnablePassthrough
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_mistralai.chat_models import ChatMistralAI
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from pydantic import BaseModel, Field
-from langchain_huggingface import HuggingFaceEmbeddings
 
 load_dotenv()
 
@@ -52,7 +52,13 @@ class PsychologistRAG:
                 self.db = None
         else:
             print("FAISS индекс не найден, требуется векторизация.")
-            self.db = None
+            self.vectorize_dataset()
+            print("FAISS векторизован")
+            self.db = FAISS.load_local(
+                self.faiss_path,
+                embeddings,
+                allow_dangerous_deserialization=True
+            )
 
         self._initialize_chain()
 

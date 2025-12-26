@@ -57,7 +57,7 @@ def check_articles_coverage(base_json_path, articles_dir):
     with open(base_json_path, 'r', encoding='utf-8') as f:
         dataset = json.load(f)
     
-    print("🔍 ПРОВЕРКА ПОКРЫТИЯ СТАТЕЙ:")
+    print("ПРОВЕРКА ПОКРЫТИЯ СТАТЕЙ:")
     
     for item in dataset['rows']:
         article_id = item['id']
