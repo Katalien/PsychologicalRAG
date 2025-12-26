@@ -1,0 +1,613 @@
+{
+  "meta": {
+    "name": "PsychRAG-Bench-100",
+    "description": "Benchmark for evaluating topic-level retrieval and answer quality for a psychological RAG chatbot",
+    "themes": ["depression", "anxiety", "panic_attack", "stress", "burnout", "paper"]
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "Психиатр поставил мне диагноз «депрессия». Что обычно рекомендуют делать в начале лечения?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression"]
+    },
+    {
+      "id": 2,
+      "question": "Мне кажется, что я ничего не чувствую — ни радости, ни грусти. Это может быть связано с депрессией?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression"]
+    },
+    {
+      "id": 3,
+      "question": "Почему при депрессии часто пропадает энергия и мотивация?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression", "burnout"]
+    },
+    {
+      "id": 4,
+      "question": "В чём разница между клинической депрессией и временным упадком настроения?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression"]
+    },
+    {
+      "id": 5,
+      "question": "Может ли депрессия проявляться физическими симптомами?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression", "anxiety"]
+    },
+    {
+      "id": 6,
+      "question": "Почему при депрессии трудно заставить себя делать даже простые вещи?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression", "burnout"]
+    },
+    {
+      "id": 7,
+      "question": "Какие повседневные привычки могут поддерживать состояние при депрессии?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression"]
+    },
+    {
+      "id": 8,
+      "question": "Можно ли работать и учиться, если у тебя депрессия?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression", "burnout"]
+    },
+    {
+      "id": 9,
+      "question": "Почему при депрессии часто возникает чувство вины и никчёмности?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression"]
+    },
+    {
+      "id": 10,
+      "question": "Как окружающие могут поддержать человека с депрессией?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression"]
+    },
+    {
+      "id": 11,
+      "question": "Всегда ли депрессия требует медикаментозного лечения?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression"]
+    },
+    {
+      "id": 12,
+      "question": "Почему депрессия может длиться месяцами?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression"]
+    },
+    {
+      "id": 13,
+      "question": "Что делать, если депрессия возвращается снова?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression"]
+    },
+    {
+      "id": 14,
+      "question": "Может ли депрессия возникнуть без видимой причины?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression"]
+    },
+    {
+      "id": 15,
+      "question": "Как депрессия влияет на мышление и принятие решений?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression"]
+    },
+    {
+      "id": 16,
+      "question": "Почему при депрессии часто нарушается сон?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression"]
+    },
+    {
+      "id": 17,
+      "question": "Можно ли спутать депрессию с ленью?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression"]
+    },
+    {
+      "id": 18,
+      "question": "Какие методы психотерапии чаще всего применяются при депрессии?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression", "paper"]
+    },
+    {
+      "id": 19,
+      "question": "Почему депрессия и тревога часто идут вместе?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression", "anxiety"]
+    },
+    {
+      "id": 20,
+      "question": "В каких случаях при депрессии стоит обязательно обратиться к специалисту?",
+      "expected_theme": "depression",
+      "allowed_topics": ["depression"]
+    },
+
+    {
+      "id": 21,
+      "question": "Я постоянно испытываю тревогу, даже когда объективно всё хорошо. Почему так происходит?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety", "panic_attack", "stress"]
+    },
+    {
+      "id": 22,
+      "question": "В чём разница между тревогой и страхом?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety", "panic_attack"]
+    },
+    {
+      "id": 23,
+      "question": "Почему тревога может усиливаться вечером или ночью?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety"]
+    },
+    {
+      "id": 24,
+      "question": "Какие мысли чаще всего поддерживают тревожное состояние?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety"]
+    },
+    {
+      "id": 25,
+      "question": "Может ли тревога возникать без конкретной причины?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety"]
+    },
+    {
+      "id": 26,
+      "question": "Почему тревожные люди часто «накручивают» себя?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety"]
+    },
+    {
+      "id": 27,
+      "question": "Как тревога влияет на концентрацию и память?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety"]
+    },
+    {
+      "id": 28,
+      "question": "Может ли тревога проявляться через телесные ощущения?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety", "panic_attack"]
+    },
+    {
+      "id": 29,
+      "question": "Какие когнитивные искажения связаны с тревогой?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety"]
+    },
+    {
+      "id": 30,
+      "question": "Чем отличается генерализованная тревога от ситуативной?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety"]
+    },
+    {
+      "id": 31,
+      "question": "Почему попытки «перестать волноваться» часто не работают?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety"]
+    },
+    {
+      "id": 32,
+      "question": "Как тревога влияет на поведение в социальных ситуациях?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety"]
+    },
+    {
+      "id": 33,
+      "question": "Какие подходы помогают лучше справляться с постоянной тревогой?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety", "paper"]
+    },
+    {
+      "id": 34,
+      "question": "Может ли тревога усиливаться из-за новостей и соцсетей?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety", "stress"]
+    },
+    {
+      "id": 35,
+      "question": "Почему тревога часто сопровождается раздражительностью?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety"]
+    },
+    {
+      "id": 36,
+      "question": "Как тревога связана с контролем и перфекционизмом?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety"]
+    },
+    {
+      "id": 37,
+      "question": "Можно ли полностью избавиться от тревоги?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety"]
+    },
+    {
+      "id": 38,
+      "question": "Какие ошибки люди часто совершают при борьбе с тревогой?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety"]
+    },
+    {
+      "id": 39,
+      "question": "Как тревога влияет на сон и засыпание?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety", "stress"]
+    },
+    {
+      "id": 40,
+      "question": "В каких случаях тревога считается поводом для обращения к специалисту?",
+      "expected_theme": "anxiety",
+      "allowed_topics": ["anxiety"]
+    },
+
+    {
+      "id": 41,
+      "question": "Что такое паническая атака и как она обычно проявляется?",
+      "expected_theme": "panic_attack",
+      "allowed_topics": ["panic_attack", "anxiety"]
+    },
+    {
+      "id": 42,
+      "question": "Почему во время панической атаки кажется, что сейчас умрёшь?",
+      "expected_theme": "panic_attack",
+      "allowed_topics": ["panic_attack", "anxiety"]
+    },
+    {
+      "id": 43,
+      "question": "Может ли паническая атака возникнуть внезапно, без причины?",
+      "expected_theme": "panic_attack",
+      "allowed_topics": ["panic_attack", "anxiety"]
+    },
+    {
+      "id": 44,
+      "question": "Чем паническая атака отличается от сильной тревоги?",
+      "expected_theme": "panic_attack",
+      "allowed_topics": ["panic_attack", "anxiety"]
+    },
+    {
+      "id": 45,
+      "question": "Почему панические атаки часто сопровождаются учащённым сердцебиением?",
+      "expected_theme": "panic_attack",
+      "allowed_topics": ["panic_attack"]
+    },
+    {
+      "id": 46,
+      "question": "Может ли страх новой панической атаки усиливать проблему?",
+      "expected_theme": "panic_attack",
+      "allowed_topics": ["panic_attack", "anxiety"]
+    },
+    {
+      "id": 47,
+      "question": "Какие ошибки в поведении поддерживают панические атаки?",
+      "expected_theme": "panic_attack",
+      "allowed_topics": ["panic_attack"]
+    },
+    {
+      "id": 48,
+      "question": "Нужно ли вызывать скорую помощь при панической атаке?",
+      "expected_theme": "panic_attack",
+      "allowed_topics": ["panic_attack"]
+    },
+    {
+      "id": 49,
+      "question": "Как обычно объясняется механизм панической атаки в психологии?",
+      "expected_theme": "panic_attack",
+      "allowed_topics": ["panic_attack", "paper"]
+    },
+    {
+      "id": 50,
+      "question": "Почему панические атаки могут повторяться?",
+      "expected_theme": "panic_attack",
+      "allowed_topics": ["panic_attack"]
+    },
+
+    {
+      "id": 51,
+      "question": "Что такое стресс с точки зрения психологии?",
+      "expected_theme": "stress",
+      "allowed_topics": ["stress", "paper"]
+    },
+    {
+      "id": 52,
+      "question": "Чем хронический стресс отличается от кратковременного?",
+      "expected_theme": "stress",
+      "allowed_topics": ["stress"]
+    },
+    {
+      "id": 53,
+      "question": "Как стресс влияет на организм и психику?",
+      "expected_theme": "stress",
+      "allowed_topics": ["stress"]
+    },
+    {
+      "id": 54,
+      "question": "Почему при стрессе сложно расслабиться?",
+      "expected_theme": "stress",
+      "allowed_topics": ["stress"]
+    },
+    {
+      "id": 55,
+      "question": "Какие факторы чаще всего вызывают сильный стресс?",
+      "expected_theme": "stress",
+      "allowed_topics": ["stress"]
+    },
+    {
+      "id": 56,
+      "question": "Как стресс влияет на сон и аппетит?",
+      "expected_theme": "stress",
+      "allowed_topics": ["stress"]
+    },
+    {
+      "id": 57,
+      "question": "Может ли стресс накапливаться со временем?",
+      "expected_theme": "stress",
+      "allowed_topics": ["stress"]
+    },
+    {
+      "id": 58,
+      "question": "Почему стресс иногда проявляется раздражительностью или злостью?",
+      "expected_theme": "stress",
+      "allowed_topics": ["stress"]
+    },
+    {
+      "id": 59,
+      "question": "Какие поведенческие реакции характерны для сильного стресса?",
+      "expected_theme": "stress",
+      "allowed_topics": ["stress"]
+    },
+    {
+      "id": 60,
+      "question": "Как отличить нормальный стресс от вредного?",
+      "expected_theme": "stress",
+      "allowed_topics": ["stress"]
+    },
+
+    {
+      "id": 61,
+      "question": "Что такое эмоциональное выгорание и как оно развивается?",
+      "expected_theme": "burnout",
+      "allowed_topics": ["burnout", "stress"]
+    },
+    {
+      "id": 62,
+      "question": "Чем выгорание отличается от обычной усталости?",
+      "expected_theme": "burnout",
+      "allowed_topics": ["burnout", "stress"]
+    },
+    {
+      "id": 63,
+      "question": "Почему при выгорании пропадает интерес к работе?",
+      "expected_theme": "burnout",
+      "allowed_topics": ["burnout"]
+    },
+    {
+      "id": 64,
+      "question": "Какие признаки эмоционального выгорания считаются ключевыми?",
+      "expected_theme": "burnout",
+      "allowed_topics": ["burnout"]
+    },
+    {
+      "id": 65,
+      "question": "Может ли выгорание возникнуть у людей, которые любят свою работу?",
+      "expected_theme": "burnout",
+      "allowed_topics": ["burnout"]
+    },
+    {
+      "id": 66,
+      "question": "Как выгорание влияет на отношения с коллегами?",
+      "expected_theme": "burnout",
+      "allowed_topics": ["burnout"]
+    },
+    {
+      "id": 67,
+      "question": "Почему при выгорании появляется цинизм и безразличие?",
+      "expected_theme": "burnout",
+      "allowed_topics": ["burnout"]
+    },
+    {
+      "id": 68,
+      "question": "Как рабочая нагрузка связана с выгоранием?",
+      "expected_theme": "burnout",
+      "allowed_topics": ["burnout", "stress"]
+    },
+    {
+      "id": 69,
+      "question": "Можно ли восстановиться после выгорания без смены работы?",
+      "expected_theme": "burnout",
+      "allowed_topics": ["burnout"]
+    },
+    {
+      "id": 70,
+      "question": "Какие привычки способствуют восстановлению после выгорания?",
+      "expected_theme": "burnout",
+      "allowed_topics": ["burnout"]
+    },
+    {
+      "id": 71,
+      "question": "Какие научные исследования подтверждают эффективность когнитивно-поведенческой терапии?",
+      "expected_theme": "paper",
+      "allowed_topics": ["paper"]
+    },
+    {
+      "id": 72,
+      "question": "Какие данные приводятся в исследованиях о причинах тревожных расстройств?",
+      "expected_theme": "paper",
+      "allowed_topics": ["anxiety", "paper"]
+    },
+    {
+      "id": 73,
+      "question": "Что говорится в научных работах о механизмах депрессии?",
+      "expected_theme": "paper",
+      "allowed_topics": ["paper", "depression"]
+    },
+    {
+      "id": 74,
+      "question": "Какие методы работы с тревогой имеют научное подтверждение?",
+      "expected_theme": "paper",
+      "allowed_topics": ["paper", "anxiety"]
+    },
+    {
+      "id": 75,
+      "question": "Какие выводы делают авторы исследований о синдроме выгорания?",
+      "expected_theme": "paper",
+      "allowed_topics": ["paper", "burnout"]
+    },
+    {
+      "id": 76,
+      "question": "Какие ограничения упоминаются в научных исследованиях по теме стресса?",
+      "expected_theme": "paper",
+      "allowed_topics": ["paper", "stress"]
+    },
+    {
+      "id": 77,
+      "question": "Чем отличаются научные данные от популярной психологии?",
+      "expected_theme": "paper",
+      "allowed_topics": ["paper"]
+    },
+    {
+      "id": 78,
+      "question": "Какие результаты показывают метаанализы по лечению депрессии?",
+      "expected_theme": "paper",
+      "allowed_topics": ["paper", "depression"]
+    },
+    {
+      "id": 79,
+      "question": "Какие факторы риска депрессии выделяются в исследованиях?",
+      "expected_theme": "paper",
+      "allowed_topics": ["paper", "depression"]
+    },
+    {
+      "id": 80,
+      "question": "Почему важно опираться на научные источники при работе с психическим здоровьем?",
+      "expected_theme": "paper",
+      "allowed_topics": ["paper"]
+    },
+    {
+        "id": 81,
+        "question": "У меня уже неделю нет сил, но настроение вроде нормальное. Это депрессия или выгорание? Как отличить по признакам?",
+        "expected_theme": "burnout",
+        "allowed_topics": ["burnout", "depression", "stress"]
+    },
+    {
+        "id": 82,
+        "question": "Я постоянно тревожусь и одновременно плохо сплю. Это тревога или стресс? Что обычно первично и как с этим работать?",
+        "expected_theme": "anxiety",
+        "allowed_topics": ["anxiety", "stress"]
+    },
+    {
+        "id": 83,
+        "question": "Когда я выхожу из дома, у меня начинается сильное сердцебиение и страх, что упаду в обморок. Это паническая атака или просто тревога?",
+        "expected_theme": "panic_attack",
+        "allowed_topics": ["panic_attack", "anxiety"]
+    },
+    {
+        "id": 84,
+        "question": "Я читаю советы «просто не думай о плохом» — но от этого хуже. Почему так и что делать вместо этого?",
+        "expected_theme": "anxiety",
+        "allowed_topics": ["anxiety", "stress"]
+    },
+    {
+        "id": 85,
+        "question": "Мне кажется, что у меня «химический дисбаланс», поэтому ничего не поможет. Это правда? Что говорят исследования?",
+        "expected_theme": "paper",
+        "allowed_topics": ["paper"]
+    },
+    {
+        "id": 86,
+        "question": "Правда ли, что дыхательные упражнения всегда останавливают паническую атаку за пару минут? Если нет — почему?",
+        "expected_theme": "panic_attack",
+        "allowed_topics": ["panic_attack", "anxiety", "paper"]
+    },
+    {
+        "id": 87,
+        "question": "Я хочу полностью убрать стресс из жизни. Это реалистичная цель или она может навредить? Почему?",
+        "expected_theme": "stress",
+        "allowed_topics": ["stress"]
+    },
+    {
+        "id": 88,
+        "question": "Мне советуют «срочно сменить работу» из-за выгорания. Это действительно всегда нужно? Какие есть альтернативы?",
+        "expected_theme": "burnout",
+        "allowed_topics": ["burnout", "stress"]
+    },
+    {
+        "id": 89,
+        "question": "Я думаю, что если буду избегать мест, где мне страшно, то тревога пройдёт. Это рабочая стратегия или ловушка?",
+        "expected_theme": "anxiety",
+        "allowed_topics": ["anxiety", "panic_attack"]
+    },
+    {
+        "id": 90,
+        "question": "Иногда мне резко становится страшно, я начинаю прислушиваться к сердцу и «проверять симптомы». Почему это усиливает состояние?",
+        "expected_theme": "panic_attack",
+        "allowed_topics": ["panic_attack", "anxiety"]
+    },
+    {
+        "id": 91,
+        "question": "Если я выгорела, но при этом могу смеяться и радоваться, значит это точно не выгорание? Разбей эту мысль.",
+        "expected_theme": "burnout",
+        "allowed_topics": ["burnout", "stress"]
+    },
+    {
+        "id": 92,
+        "question": "Мне кажется, что я просто ленивый человек, а не в депрессии. Какие признаки помогают различить лень и депрессию?",
+        "expected_theme": "depression",
+        "allowed_topics": ["depression", "burnout"]
+    },
+    {
+        "id": 93,
+        "question": "Я слышал(а), что антидепрессанты «меняют личность». Что говорят исследования о побочных эффектах и рисках?",
+        "expected_theme": "paper",
+        "allowed_topics": ["paper"]
+    },
+    {
+        "id": 94,
+        "question": "Может ли длительный стресс привести к паническим атакам? Есть ли у этого объяснение в исследованиях?",
+        "expected_theme": "paper",
+        "allowed_topics": ["paper"]
+    },
+    {
+        "id": 95,
+        "question": "Я хочу сам(а) себе поставить диагноз: тревожное расстройство или депрессия. Можешь по моему описанию точно сказать?",
+        "expected_theme": "anxiety",
+        "allowed_topics": ["anxiety", "depression", "stress", "burnout"]
+    },
+    {
+        "id": 96,
+        "question": "Я хочу, чтобы ты дал(а) мне пошаговый план на 30 дней, чтобы «вылечить депрессию» без врача. Это возможно?",
+        "expected_theme": "depression",
+        "allowed_topics": ["depression"]
+    },
+    {
+        "id": 97,
+        "question": "Я всё делаю идеально, но всё равно тревожно. Перфекционизм — причина тревоги или следствие? Как это объясняют модели?",
+        "expected_theme": "anxiety",
+        "allowed_topics": ["anxiety", "paper"]
+    },
+    {
+        "id": 98,
+        "question": "Если у меня выгорание, почему отдых на выходных не помогает, а иногда становится только хуже?",
+        "expected_theme": "burnout",
+        "allowed_topics": ["burnout", "stress", "depression"]
+    },
+    {
+        "id": 99,
+        "question": "Я боюсь, что у меня паническая атака на публике и все увидят. Как работает этот «страх страха»?",
+        "expected_theme": "panic_attack",
+        "allowed_topics": ["panic_attack", "anxiety"]
+    },
+    {
+        "id": 100,
+        "question": "Сравни кратко: какие подходы считаются наиболее доказательными для тревоги и депрессии, и в чём различия по данным исследований?",
+        "expected_theme": "paper",
+        "allowed_topics": ["paper"]
+    }
+  ]
+}
