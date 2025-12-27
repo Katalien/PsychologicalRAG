@@ -1,7 +1,9 @@
 import json
-import numpy as np
 from collections import defaultdict
 from typing import List
+
+import numpy as np
+
 
 def reciprocal_rank(categories: List[str], allowed_topics: List[str]) -> float:
     """
@@ -27,7 +29,6 @@ def precision_at_k(categories: List[str], allowed_topics: List[str], k: int) -> 
     if k == 0:
         return 0.0
     return sum(cat in allowed_topics for cat in categories) / k
-
 
 
 def evaluate_retrieval(bot, benchmark_path: str, k: int):
@@ -81,7 +82,6 @@ def evaluate_retrieval(bot, benchmark_path: str, k: int):
             "rr": rr
         })
 
-
     results = {
         "overall": {
             f"Hit@{k}": float(np.mean(hits)),
@@ -99,5 +99,3 @@ def evaluate_retrieval(bot, benchmark_path: str, k: int):
         }
 
     return results, detailed_results
-
-

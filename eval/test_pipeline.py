@@ -1,19 +1,3 @@
-import os
-import json
-from typing import List, Dict, Any
-
-import pandas as pd
-from dotenv import load_dotenv
-from langchain_core.prompts import PromptTemplate
-from langchain_community.document_loaders import DataFrameLoader
-from langchain_community.vectorstores import FAISS
-from langchain_core.output_parsers import JsonOutputParser
-from langchain_core.runnables import RunnablePassthrough
-from langchain_mistralai import ChatMistralAI
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from pydantic import BaseModel, Field
-from langchain_huggingface import HuggingFaceEmbeddings
-
 from model import *
 
 load_dotenv()
@@ -29,9 +13,10 @@ embeddings = HuggingFaceEmbeddings(
     encode_kwargs=encode_kwargs,
 )
 
+
 def main():
-    rag_system = PsychologistRAG(faiss_path="./faiss_index")
-    
+    rag_system = PsychologistRAG(faiss_path="../faiss_index")
+
     if rag_system.db is None:
         print("векторизация датасете")
         try:
@@ -44,10 +29,9 @@ def main():
 
     while True:
         question = input("Вопрос: ").strip()
-        
+
         if question.lower() in {"stop", "exit"}:
             break
-        
 
         print("генерация ответа...")
         answer = rag_system.ask(question)

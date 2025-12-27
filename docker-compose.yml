@@ -1,12 +1,13 @@
-version: '3.13'
+version: "3.9"
 
 services:
-  rag-bot:
+  psychrag:
     build: .
-    container_name: psych_rag_bot
-    restart: always
-    env_file: .env
+    container_name: psychological_rag
+    restart: unless-stopped
+    env_file:
+      - .env
     volumes:
-      - ./faiss_index:/app/faiss_index
-      - ./cache:/app/cache
+      - ./faiss_index:/faiss_index
+      - ./data:/data
     command: python bot.py

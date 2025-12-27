@@ -4,6 +4,8 @@ from aiogram import Bot, Dispatcher, types, Router
 from aiogram.filters import CommandStart
 from aiogram.fsm.storage.memory import MemoryStorage
 from dotenv import load_dotenv
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from aiogram import F
 
 from model import PsychologistRAG
 
@@ -23,14 +25,35 @@ psychologist = PsychologistRAG("./faiss_index")
 @router.message(CommandStart())
 async def start(message: types.Message):
     welcome_text = (
-        "Привет!\n\n"
+        "Привет! 🤍\n\n"
         "Я — бот психологической поддержки.\n"
-        "Вы можете задать любой вопрос, связанный с ментальным здоровьем, отношениями, тревогой, стрессом или эмоциональным выгоранием.\n\n"
-        "Я не ставлю диагнозы и не заменяю психолога, но помогаю разобраться в ситуации, используя различные источники.\n\n"
-        "Напишите, что вас беспокоит."
+        "Вы можете задать любой вопрос, связанный с ментальным здоровьем, "
+        "отношениями, тревогой, стрессом или эмоциональным выгоранием.\n\n"
+        "Я не ставлю диагнозы и не заменяю психолога, "
+        "но стараюсь поддержать и помочь разобраться.\n\n"
+        "Нажмите кнопку ниже, чтобы начать диалог."
     )
 
-    await message.answer(welcome_text)
+    keyboard = InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(
+                    text="Начать диалог",
+                    callback_data="start_dialog"
+                )
+            ]
+        ]
+    )
+
+    await message.answer(welcome_text, reply_markup=keyboard)
+
+@router.callback_query(F.data == "start_dialog")
+async def start_dialog(callback: CallbackQuery):
+    await callback.message.answer(
+        "Я готов вас слушать.\n"
+        "Напишите, что вас беспокоит"
+    )
+    await callback.answer()
 
 
 @router.message()

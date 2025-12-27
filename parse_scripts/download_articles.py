@@ -164,7 +164,6 @@ class ArticleDownloader:
             # Задержка между запросами
             time.sleep(delay)
 
-        # Выводим итоги
         logger.info(f"\nИТОГИ СКАЧИВАНИЯ:")
         logger.info(f"   Успешно: {success_count}")
         logger.info(f"   Пропущено: {skipped_count}")
@@ -189,7 +188,7 @@ class ArticleDownloader:
             if os.path.exists(filepath):
                 # Проверяем размер файла
                 file_size = os.path.getsize(filepath)
-                status = "✅" if file_size > 100 else "⚠️ (маленький)"
+                status = "ОК" if file_size > 100 else "Ошибка (маленький)"
                 print(f"   {status} {filename} ({file_size} байт)")
                 downloaded += 1
             else:
@@ -201,7 +200,6 @@ class ArticleDownloader:
 
 
 def main():
-    # Пути к файлам
     BASE_JSON_PATH = "../data/base_dataset.json"
     ARTICLES_DIR = "../data/articles"
 

@@ -3,11 +3,12 @@ import os
 
 import pandas as pd
 from dotenv import load_dotenv
+from langchain_classic.memory import ConversationBufferMemory
 from langchain_community.document_loaders import DataFrameLoader
 from langchain_community.vectorstores import FAISS
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.prompts import PromptTemplate
-from langchain_core.runnables import RunnableMap, RunnablePassthrough
+from langchain_core.runnables import RunnableMap
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_mistralai.chat_models import ChatMistralAI
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -37,6 +38,10 @@ class PsychologistRAG:
         self.db = None
         self.chain = None
         self._initialize_system()
+        self.memory = ConversationBufferMemory(
+            memory_key="chat_history",
+            return_messages=False
+        )
 
     def _initialize_system(self):
         """Инициализация FAISS и цепочки"""
@@ -69,38 +74,51 @@ class PsychologistRAG:
 
         template = """
         Ты - профессиональный русскоязычный психолог-консультант.
-        Твоя задача: дать эмпатичный, структурированный ответ, опираясь ТОЛЬКО на предоставленный контекст. Всегда начинай сообщения со слов поддержки.
+        Твоя задача: дать эмпатичный, структурированный ответ, опираясь ТОЛЬКО на предоставленный контекст. 
         Если вопрос не касается психологии или ментального здоровья, вежливо откажись отвечать, вместо ссылки напиши 'Не найдено'.
+        Если пользователь описывает СВОИ проблемы, поддержи его.
+
+        Внутренне (НЕ ПИШИ ЭТО В ОТВЕТЕ):
+        1. Оцени эмоциональное состояние
+        2. Выбери релевантные фрагменты контекста
+        3. Сформируй безопасный и поддерживающий ответ
+
+        ПРАВИЛА ВЫВОДА:
+        - НЕ упоминай этапы анализа
+        - НЕ показывай размышления
+        - Ответ строго в JSON
+        - Не придумывай данные, если их нет в контексте. (ВАЖНО)
+        - Если данных недостаточно — так и скажи.
+
         Контекст: {context}
+        История диалога: {chat_history}
         Метаданные: {metadata}
-        Вопрос пользователя: {question}
-        
-        Ответ строго в формате JSON: {format_instructions}
-        
-        Правила:
-        1. Не придумывай данные, если их нет в контексте.
-        2. Если данных недостаточно — так и скажи.
-        3. Не давай вредных советов, не ставь диагнозы.
+        Вопрос: {question}
+
+        {format_instructions}
         """
 
         prompt = PromptTemplate(
             template=template,
-            input_variables=["context", "metadata", "question"],
-            partial_variables={"format_instructions": parser.get_format_instructions()}
+            input_variables=["context", "chat_history", "metadata", "question"],
+            partial_variables={
+                "format_instructions": parser.get_format_instructions()
+            }
         )
 
         llm = ChatMistralAI(
             model="mistral-large-latest",
             api_key=MISTRAL_API_KEY,
-            temperature=0.2
+            temperature=0.3
         )
 
-        # Финальная цепочка (RunnableMap → Prompt → LLM → JSON)
+        # Финальная цепочка (RunnableMap -> Prompt + Memory -> LLM -> JSON)
         self.chain = (
                 RunnableMap({
                     "context": lambda x: x["context"],
                     "metadata": lambda x: x["metadata"],
-                    "question": RunnablePassthrough()
+                    "question": lambda x: x["question"],
+                    "chat_history": lambda _: self.memory.load_memory_variables({}).get("chat_history", "")
                 })
                 | prompt
                 | llm
@@ -134,6 +152,7 @@ class PsychologistRAG:
         return True
 
     def ask(self, question: str, k: int = 3):
+
         if self.db is None:
             return {
                 "title": "Ошибка",
@@ -142,7 +161,12 @@ class PsychologistRAG:
             }
 
         try:
-            docs = self.db.similarity_search(question, k=k)
+            docs = self.db.max_marginal_relevance_search(
+                question,
+                k=k,
+                fetch_k=20,
+                lambda_mult=0.5
+            )
 
             if not docs:
                 return {
@@ -152,7 +176,6 @@ class PsychologistRAG:
                 }
 
             context = "\n\n".join(d.page_content for d in docs)
-
             metadata = "\n".join(
                 f"{d.metadata.get('name', 'Источник')}: {d.metadata.get('link', '')}"
                 for d in docs
@@ -164,8 +187,12 @@ class PsychologistRAG:
                 "question": question
             })
 
-            # Подстановка ссылки если LLM её не указал
-            if not result.get("link"):
+            self.memory.save_context(
+                {"input": question},
+                {"output": json.dumps(result, ensure_ascii=False)}
+            )
+
+            if not result.get("link") and docs:
                 result["link"] = docs[0].metadata.get("link", "")
 
             return result

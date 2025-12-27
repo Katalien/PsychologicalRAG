@@ -1,31 +1,33 @@
 FROM python:3.13-slim
 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-        build-essential \
-        libopenblas-dev \
-        libomp-dev \
-        wget \
-        git \
-        curl \
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    git \
+    curl \
+    wget \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
     && rm -rf /var/lib/apt/lists/*
 
-ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
-ENV LANG=C.UTF-8
-ENV LC_ALL=C.UTF-8
+ENV PYTHONUNBUFFERED=1
+ENV PIP_NO_CACHE_DIR=1
 
-WORKDIR /
+WORKDIR /app
 
 COPY requirements.txt .
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip setuptools wheel && \
+    pip install torch --index-url https://download.pytorch.org/whl/cpu && \
+    pip install -r requirements.txt
 
-COPY . .
+COPY README.md model.py bot.py requirements.txt ./
 
-# Проброс модели sentence-transformers в кеш
-ENV TRANSFORMERS_CACHE=/app/cache
-ENV HF_HOME=/app/cache
-# ENV HF_TOKEN=...
+COPY faiss_index ./faiss_index
+COPY readme_screenshots ./readme_screenshots
+COPY data ./data
+
 
 CMD ["python", "bot.py"]

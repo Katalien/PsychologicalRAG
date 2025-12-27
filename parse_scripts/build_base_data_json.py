@@ -61,7 +61,7 @@ def check_articles_coverage(base_json_path, articles_dir):
     print("ПРОВЕРКА ПОКРЫТИЯ СТАТЕЙ:")
 
     for item in dataset['rows']:
-        article_id = item['id']
+        article_id = item['id                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ']
         category = item['category']
         article_filename = f"{category}_{article_id}.txt"
         article_path = os.path.join(articles_dir, article_filename)
@@ -71,7 +71,6 @@ def check_articles_coverage(base_json_path, articles_dir):
 
 
 if __name__ == "__main__":
-    # Пути к файлам
     BASE_JSON_PATH = "./data/base_data.json"
     ARTICLES_DIR = "./data/articles"
     OUTPUT_PATH = "./data/final_dataset.json"
