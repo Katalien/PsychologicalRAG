@@ -1,11 +1,12 @@
 import os
 
 from aiogram import Bot, Dispatcher, types, Router
+from aiogram import F
+from aiogram.enums import ChatAction
 from aiogram.filters import CommandStart
 from aiogram.fsm.storage.memory import MemoryStorage
-from dotenv import load_dotenv
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
-from aiogram import F
+from dotenv import load_dotenv
 
 from model import PsychologistRAG
 
@@ -47,6 +48,7 @@ async def start(message: types.Message):
 
     await message.answer(welcome_text, reply_markup=keyboard)
 
+
 @router.callback_query(F.data == "start_dialog")
 async def start_dialog(callback: CallbackQuery):
     await callback.message.answer(
@@ -59,6 +61,11 @@ async def start_dialog(callback: CallbackQuery):
 @router.message()
 async def handle_msg(message: types.Message):
     user_q = message.text
+
+    await message.bot.send_chat_action(
+        chat_id=message.chat.id,
+        action=ChatAction.TYPING
+    )
 
     result = psychologist.ask(user_q)
 
